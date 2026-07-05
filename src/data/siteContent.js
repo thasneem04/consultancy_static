@@ -264,7 +264,7 @@ export const expansion = [
 
 export const contact = {
   email: "info@mncsglobal.com",
-  phones: ["+91 7397273994"],
+  phones: ["+966 55599 1530"],
   address: "King Fahad St, Al Hizam Al Thahabi, Al Khobar 34433, Saudi Arabia",
   hours: "Sunday to Thursday, 9:00 AM - 6:00 PM",
   website: "www.mncsglobal.com",
@@ -314,7 +314,7 @@ export const objectives = [
 ];
 
 export const quickContacts = [
-  { title: "Call / WhatsApp", icon: Phone, value: "+91 7397273994" },
+  { title: "Call / WhatsApp", icon: Phone, value: "+966 55599 1530" },
   { title: "Email", icon: CircleDollarSign, value: "info@mncsglobal.com" },
   { title: "Visit", icon: Landmark, value: "Al Khobar, Saudi Arabia" },
   {

@@ -42,7 +42,7 @@ export default function Contact() {
                 Phone
                 <input
                   className="focus-ring rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-white"
-                  placeholder="+91 7397273994"
+                  placeholder="+966 55599 1530"
                 />
               </label>
             </div>
