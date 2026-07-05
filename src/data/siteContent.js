@@ -187,7 +187,7 @@ export const expansion = ['Branch offices across KSA', 'International partnershi
 
 export const contact = {
   email: 'info@mncsglobal.com',
-  phones: ['+966 55599 1530', '+91 739727 3994'],
+  phones: ['+966 55599 1530', '+91 7397273994'],
   address: 'King Fahad St, Al Hizam Al Thahabi, Al Khobar 34433, Saudi Arabia',
   hours: 'Sunday to Thursday, 9:00 AM - 6:00 PM',
   website: 'www.mncsglobal.com',
