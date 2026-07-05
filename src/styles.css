@@ -1,10 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   color-scheme: dark;
+  --bg-primary: #07111f;
+  --bg-secondary: #0d1b2a;
+  --card-bg: #132238;
+  --navbar-bg: rgba(7, 17, 31, 0.75);
+  --section-bg: #101c2f;
+  --primary-blue: #1ea7f2;
+  --secondary-blue: #2d5aa6;
+  --accent-yellow: #f9c500;
+  --accent-orange: #f05a28;
+  --accent-pink: #d92e8a;
+  --text-primary: #ffffff;
+  --text-secondary: #c7d2e0;
+  --border-default: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -20,10 +33,72 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 15% 5%, rgba(30, 167, 242, 0.2), transparent 32rem),
-    radial-gradient(circle at 85% 20%, rgba(217, 46, 138, 0.16), transparent 28rem),
-    #0a0a0a;
+    /* soft corner glows and layered navy foundation */
+    radial-gradient(
+      circle at top right,
+      rgba(30, 167, 242, 0.12),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(30, 167, 242, 0.06),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(249, 197, 0, 0.06),
+      transparent 28%
+    ),
+    linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
   font-family: Inter, system-ui, sans-serif;
+  color: var(--text-primary);
+}
+
+/* subtle full-page grid overlay + soft particles for depth */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.04;
+  mask-image: radial-gradient(
+    closest-side,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.05)
+  );
+  mix-blend-mode: overlay;
+}
+
+/* tiny particles and soft mesh */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(
+      circle at 10% 8%,
+      rgba(30, 167, 242, 0.035) 0.5px,
+      transparent 0.6px
+    ),
+    radial-gradient(
+      circle at 90% 92%,
+      rgba(30, 167, 242, 0.02) 0.6px,
+      transparent 0.8px
+    ),
+    radial-gradient(
+      circle at 60% 30%,
+      rgba(249, 197, 0, 0.03) 0.8px,
+      transparent 1px
+    );
+  opacity: 0.9;
+  filter: blur(0.6px) saturate(0.9);
 }
 
 a {
@@ -32,26 +107,162 @@ a {
 }
 
 .glass {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035));
-  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(18px);
+  border: 1px solid var(--border-default);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
+  box-shadow:
+    0 18px 60px rgba(2, 8, 23, 0.6),
+    0 8px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
 }
 
 .gradient-border {
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-default);
   background:
-    linear-gradient(#111, #111) padding-box,
-    linear-gradient(135deg, rgba(30, 167, 242, 0.55), rgba(249, 197, 0, 0.3), rgba(217, 46, 138, 0.5)) border-box;
+    linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+    linear-gradient(
+        135deg,
+        rgba(30, 167, 242, 0.45),
+        rgba(45, 90, 166, 0.18),
+        rgba(217, 46, 138, 0.28)
+      )
+      border-box;
+  border-radius: 16px;
 }
 
 .mesh {
   background-image:
-    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.95), transparent);
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+/* Buttons */
+.btn-gradient-blue-cyan {
+  background: linear-gradient(
+    90deg,
+    var(--secondary-blue),
+    var(--primary-blue)
+  );
+  color: var(--text-primary);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(30, 167, 242, 0.12);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.btn-gradient-blue-cyan:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 18px 70px rgba(30, 167, 242, 0.18);
+}
+
+.btn-gradient-blue-purple {
+  background: linear-gradient(90deg, #2d5aa6, #8c4dff);
+  color: var(--text-primary);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(45, 90, 166, 0.12);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.btn-gradient-blue-purple:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 18px 70px rgba(45, 90, 166, 0.18);
+}
+
+.btn-gradient-orange-pink {
+  background: linear-gradient(90deg, var(--accent-orange), var(--accent-pink));
+  color: var(--text-primary);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(217, 46, 138, 0.12);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.btn-gradient-orange-pink:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 18px 70px rgba(217, 46, 138, 0.18);
+}
+
+/* Hover glow utility */
+.hover-glow:hover {
+  box-shadow: 0 18px 70px rgba(30, 167, 242, 0.14);
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Card style */
+.card-surface {
+  background: rgba(19, 34, 56, 0.75);
+  border: 1px solid var(--border-default);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(2, 8, 23, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition:
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.card-surface:hover {
+  box-shadow: 0 22px 80px rgba(30, 167, 242, 0.08);
+  transform: translateY(-4px);
+}
+
+/* Navbar backdrop */
+.navbar-bg {
+  background: var(--navbar-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-default);
+}
+
+/* Section background shades for depth */
+.section-bg-1 {
+  background: linear-gradient(
+    180deg,
+    var(--primary-bg),
+    rgba(13, 27, 42, 0.92)
+  );
+}
+.section-bg-2 {
+  background: linear-gradient(
+    180deg,
+    rgba(13, 27, 42, 0.96),
+    var(--section-bg)
+  );
+}
+.section-bg-3 {
+  background: linear-gradient(
+    180deg,
+    rgba(19, 34, 56, 0.98),
+    rgba(7, 17, 31, 0.94)
+  );
+}
+
+/* Hero helper class: premium layered hero background */
+.hero-bg {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(30, 167, 242, 0.14),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(249, 197, 0, 0.06),
+      transparent 42%
+    ),
+    linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
 }
 
 .section-shell {
@@ -65,5 +276,5 @@ a {
 }
 
 .focus-ring:focus-visible {
-  outline-color: #1EA7F2;
+  outline-color: #1ea7f2;
 }
