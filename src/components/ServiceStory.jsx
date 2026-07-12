@@ -20,8 +20,8 @@ export default function ServiceStory() {
               <motion.article
                 key={service.title}
                 className="story-chapter flex min-h-[100svh] items-center py-24"
-                initial={{ opacity: 0.25, filter: 'blur(8px)', scale: 0.97 }}
-                whileInView={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
+                initial={{ opacity: 0, y: 20, scale: 0.99 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ amount: 0.55, once: false }}
                 transition={{ duration: 0.55, ease: 'easeOut' }}
               >
