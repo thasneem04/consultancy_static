@@ -10,8 +10,8 @@ export default function Footer() {
     >
       <div className="section-shell grid gap-10 py-12 md:grid-cols-[1.3fr_0.8fr_1fr]">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="site-logo-frame flex items-center justify-center overflow-hidden rounded-2xl bg-transparent">
+          <div className="flex items-center gap-0">
+            <span className="site-logo-frame flex items-center justify-center rounded-2xl bg-transparent -mr-2 sm:-mr-1">
               <img
                 src="/mnclogo.png"
                 alt="Multi Networking Consultant Services logo"
