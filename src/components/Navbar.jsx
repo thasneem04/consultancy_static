@@ -21,7 +21,7 @@ export default function Navbar() {
       <nav className="section-shell flex h-16 items-center justify-between gap-3 sm:h-20 lg:h-24 sm:gap-4">
         <NavLink
           to="/"
-          className="focus-ring flex items-center gap-1"
+          className="focus-ring flex items-center gap-2"
           onClick={() => setOpen(false)}
         >
           <span className="site-logo-frame flex items-center justify-center overflow-hidden rounded-2xl bg-transparent">

@@ -28,6 +28,7 @@ export default function App() {
     return () => window.removeEventListener("resize", setHeaderHeight);
   }, []);
 
+
   return (
     <div
       className="site-canvas min-h-screen text-white"
@@ -36,7 +37,7 @@ export default function App() {
       }}
     >
       <Navbar />
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/company" element={<Company />} />
