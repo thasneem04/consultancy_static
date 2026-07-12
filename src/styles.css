@@ -5,6 +5,11 @@
 
 :root {
   color-scheme: dark;
+  --page-gap: clamp(
+    12px,
+    1.8vw,
+    32px
+  ); /* responsive additional gap under header — reduced to bring content closer */
   --bg-primary: #060d1d;
   --bg-secondary: #101c3d;
   --bg-slate: #263a66;
@@ -52,10 +57,26 @@ body {
 
 .site-canvas {
   background:
-    radial-gradient(circle at 8% 8%, rgba(30, 167, 242, 0.16), transparent 25rem),
-    radial-gradient(circle at 90% 16%, rgba(88, 99, 207, 0.18), transparent 28rem),
-    radial-gradient(circle at 78% 74%, rgba(217, 46, 138, 0.09), transparent 24rem),
-    radial-gradient(circle at 12% 84%, rgba(240, 90, 40, 0.07), transparent 22rem),
+    radial-gradient(
+      circle at 8% 8%,
+      rgba(30, 167, 242, 0.16),
+      transparent 25rem
+    ),
+    radial-gradient(
+      circle at 90% 16%,
+      rgba(88, 99, 207, 0.18),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 78% 74%,
+      rgba(217, 46, 138, 0.09),
+      transparent 24rem
+    ),
+    radial-gradient(
+      circle at 12% 84%,
+      rgba(240, 90, 40, 0.07),
+      transparent 22rem
+    ),
     linear-gradient(135deg, #060d1d 0%, #0b1730 36%, #263a66 70%, #15133a 100%);
 }
 
@@ -82,10 +103,26 @@ body::after {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(circle at 17% 32%, rgba(30, 167, 242, 0.15), transparent 14rem),
-    radial-gradient(circle at 84% 44%, rgba(32, 215, 232, 0.1), transparent 16rem),
-    radial-gradient(circle at 64% 90%, rgba(217, 46, 138, 0.09), transparent 15rem),
-    radial-gradient(circle at 30% 72%, rgba(240, 90, 40, 0.06), transparent 12rem);
+    radial-gradient(
+      circle at 17% 32%,
+      rgba(30, 167, 242, 0.15),
+      transparent 14rem
+    ),
+    radial-gradient(
+      circle at 84% 44%,
+      rgba(32, 215, 232, 0.1),
+      transparent 16rem
+    ),
+    radial-gradient(
+      circle at 64% 90%,
+      rgba(217, 46, 138, 0.09),
+      transparent 15rem
+    ),
+    radial-gradient(
+      circle at 30% 72%,
+      rgba(240, 90, 40, 0.06),
+      transparent 12rem
+    );
   opacity: 0.75;
   filter: blur(38px);
 }
@@ -191,10 +228,16 @@ a {
 
 /* Card style */
 .card-surface {
-  background: linear-gradient(145deg, rgba(29, 51, 92, 0.72), rgba(10, 19, 40, 0.82));
+  background: linear-gradient(
+    145deg,
+    rgba(29, 51, 92, 0.72),
+    rgba(10, 19, 40, 0.82)
+  );
   border: 1px solid var(--border-default);
   border-radius: 16px;
-  box-shadow: 0 18px 55px rgba(2, 8, 23, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 18px 55px rgba(2, 8, 23, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(14px) saturate(120%);
   -webkit-backdrop-filter: blur(8px);
   transition:
@@ -255,8 +298,34 @@ a {
 }
 
 .section-shell {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1320px, calc(100% - 32px));
   margin-inline: auto;
+}
+
+/* Hero bleed image: extends the hero image up under the fixed header so
+   the background image appears continuous beneath the navbar while
+   page content stays offset using the global --header-height + --page-gap. */
+.hero-bleed-img {
+  /* Use fixed positioning so the hero image always starts immediately
+     beneath the fixed navbar and fills the viewport area for the hero. */
+  position: fixed;
+  top: var(--header-height, 64px);
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: calc(100vh - var(--header-height, 64px));
+  object-fit: cover;
+  object-position: center top;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ensure overlays and content stack above the fixed hero image */
+.section-shell,
+.mesh,
+.section-shell > * {
+  position: relative;
+  z-index: 1;
 }
 
 section.section-shell {
@@ -271,7 +340,11 @@ section.section-shell::before {
   z-index: -1;
   border: 1px solid rgba(158, 194, 255, 0.07);
   border-radius: 2rem;
-  background: linear-gradient(135deg, rgba(12, 26, 55, 0.18), rgba(72, 70, 148, 0.08));
+  background: linear-gradient(
+    135deg,
+    rgba(12, 26, 55, 0.18),
+    rgba(72, 70, 148, 0.08)
+  );
   box-shadow: 0 28px 80px rgba(0, 5, 22, 0.2);
 }
 
@@ -285,12 +358,24 @@ section.section-shell::before {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0) rotate(-2deg); }
-  50% { transform: translateY(-10px) rotate(2deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
 }
 
 .brand-gradient-text {
-  background: linear-gradient(100deg, #1ea7f2 0%, #20d7e8 32%, #f9c500 58%, #f05a28 76%, #d92e8a 100%);
+  background: linear-gradient(
+    100deg,
+    #1ea7f2 0%,
+    #20d7e8 32%,
+    #f9c500 58%,
+    #f05a28 76%,
+    #d92e8a 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
