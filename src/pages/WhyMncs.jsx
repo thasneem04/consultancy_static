@@ -10,16 +10,16 @@ export default function WhyMncs() {
   return (
     <MotionPage>
       <PageHeader
-        eyebrow="Why MNCS"
+        eyebrow="Why Us"
         title="Strategic consulting with local market knowledge, ethics, and execution discipline."
-        text="MNCS combines a client-focused approach, professional network, Vision 2030 alignment, and strong government liaison support to help organizations move from plan to measurable progress."
+        text="Multi Networking Consultant Services combines a client-focused approach, professional network, Vision 2030 alignment, and strong government liaison support to help organizations move from plan to measurable progress."
       />
 
       <Section eyebrow="Consulting Process" title="A clear path from requirement to optimization.">
         <ProcessTimeline steps={process} />
       </Section>
 
-      <Section eyebrow="Company Strengths" title="Why clients choose MNCS.">
+      <Section eyebrow="Company Strengths" title="Why clients choose Multi Networking Consultant Services.">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {strengths.map((item) => (
             <div key={item} className="glass flex gap-3 rounded-2xl p-5">
@@ -61,13 +61,13 @@ export default function WhyMncs() {
         </div>
       </Section>
 
-      <Section eyebrow="Client Benefits" title="What clients gain from the MNCS model.">
+      <Section eyebrow="Client Benefits" title="What clients gain from the Multi Networking Consultant Services model.">
         <div className="grid gap-5 md:grid-cols-3">
           {['Faster market clarity', 'Improved compliance readiness', 'Stronger project execution'].map((item) => (
             <div key={item} className="gradient-border rounded-2xl p-6">
               <h3 className="font-heading text-xl font-bold">{item}</h3>
               <p className="mt-4 text-sm leading-7 text-muted">
-                MNCS turns advisory work into practical action through structured analysis, localized strategy, implementation support, and continuous optimization.
+                Multi Networking Consultant Services turns advisory work into practical action through structured analysis, localized strategy, implementation support, and continuous optimization.
               </p>
             </div>
           ))}

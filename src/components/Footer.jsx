@@ -9,11 +9,11 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <span className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black">
-              <img src="/mnc-logo.jpg" alt="MNC Group logo" className="h-full w-full object-cover" />
+              <img src="/mnc-logo.jpg" alt="Multi Networking Consultant Services logo" className="h-full w-full object-cover" />
             </span>
             <div>
-              <p className="font-heading text-lg font-extrabold">MNC Group</p>
-              <p className="text-xs uppercase tracking-[0.18em] text-muted">Multi Networking Consultant Services</p>
+              <p className="brand-gradient-text font-heading text-lg font-extrabold tracking-[0.14em]">MULTI NETWORKING</p>
+              <p className="brand-gradient-text text-xs uppercase tracking-[0.22em]">CONSULTANT SERVICES</p>
             </div>
           </div>
           <p className="mt-5 max-w-md text-sm leading-7 text-muted">
@@ -33,15 +33,32 @@ export default function Footer() {
         <div>
           <h3 className="font-heading text-base font-bold">Contact</h3>
           <div className="mt-5 grid gap-4 text-sm text-muted">
-            <p className="flex gap-3"><MapPin className="shrink-0 text-skybrand" size={18} />{contact.address}</p>
-            <p className="flex gap-3"><Phone className="shrink-0 text-skybrand" size={18} />{contact.phones.join(' | ')}</p>
-            <p className="flex gap-3"><Mail className="shrink-0 text-skybrand" size={18} />{contact.email}</p>
+            <div className="flex gap-3">
+              <MapPin className="shrink-0 text-skybrand" size={18} />
+              <div className="grid gap-1">
+                {contact.address.map((line) => <span key={line}>{line}</span>)}
+              </div>
+            </div>
+            {contact.phones.map((phone) => (
+              <p key={phone.label} className="flex gap-3">
+                <Phone className="shrink-0 text-skybrand" size={18} />
+                <span>
+                  {phone.label}: {phone.number}
+                </span>
+              </p>
+            ))}
+            {contact.emails.map((email) => (
+              <p key={email} className="flex gap-3">
+                <Mail className="shrink-0 text-skybrand" size={18} />
+                <span>{email}</span>
+              </p>
+            ))}
           </div>
         </div>
       </div>
       <div className="border-t border-white/10 py-5">
         <div className="section-shell flex flex-col gap-3 text-xs text-muted md:flex-row md:items-center md:justify-between">
-          <span>© 2026 MNC Group. All rights reserved.</span>
+          <span>© 2026 Multi Networking Consultant Services. All rights reserved.</span>
           <span>{contact.website}</span>
         </div>
       </div>

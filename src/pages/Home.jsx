@@ -25,14 +25,14 @@ export default function Home() {
           >
             <p className="mb-5 text-sm font-semibold uppercase tracking-[0.24em] text-gold">Business & Management Consulting</p>
             <h1 className="font-heading text-4xl font-extrabold leading-tight md:text-7xl">
-              MNC Group connects expertise with global business ambition.
+              Multi Networking Consultant Services connects expertise with global business ambition.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
               Multi Networking Consultant Services supports organizations with strategic advisory, market development, compliance, workforce, energy, and digital transformation consulting in Saudi Arabia and India.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <ButtonLink to="/solutions">Explore Solutions</ButtonLink>
-              <ButtonLink to="/company" variant="secondary">About MNCS</ButtonLink>
+              <ButtonLink to="/company" variant="secondary">About Us</ButtonLink>
             </div>
           </motion.div>
         </div>
@@ -53,14 +53,14 @@ export default function Home() {
       <Section
         eyebrow="Featured Consulting Services"
         title="Advisory built for Saudi market momentum."
-        text="Each service area is drawn from MNCS's consulting profile and filtered to focus on enterprise, compliance, workforce, energy, and digital transformation priorities."
+        text="Each service area is drawn from Multi Networking Consultant Services' consulting profile and filtered to focus on enterprise, compliance, workforce, energy, and digital transformation priorities."
       >
         <div className="grid items-start gap-5 md:grid-cols-2 lg:grid-cols-3">
           {solutions.slice(0, 3).map((service) => <ServiceCard key={service.title} service={service} />)}
         </div>
       </Section>
 
-      <Section eyebrow="Why Choose MNCS" title="Practical expertise from strategy through execution.">
+      <Section eyebrow="Why Choose Us" title="Practical expertise from strategy through execution.">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {strengths.slice(0, 8).map((item) => (
             <div key={item} className="glass flex items-start gap-3 rounded-2xl p-5">
@@ -74,7 +74,7 @@ export default function Home() {
       <Section
         eyebrow="Saudi Vision 2030"
         title="Aligned with national growth priorities."
-        text="MNCS contributes to the Kingdom's development goals by empowering businesses, supporting SME growth, improving employment readiness, advancing digital transformation, and enabling sustainable energy initiatives."
+        text="Multi Networking Consultant Services contributes to the Kingdom's development goals by empowering businesses, supporting SME growth, improving employment readiness, advancing digital transformation, and enabling sustainable energy initiatives."
       >
         <div className="grid gap-5 md:grid-cols-5">
           {vision2030.map((item) => <Card key={item.title} icon={item.icon} title={item.title} />)}

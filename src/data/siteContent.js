@@ -2,7 +2,6 @@ import {
   BadgeCheck,
   BarChart3,
   Building2,
-  CircleDollarSign,
   ClipboardCheck,
   Factory,
   FileCheck2,
@@ -11,11 +10,16 @@ import {
   Landmark,
   Leaf,
   LineChart,
+  Mail,
   Network,
+  MapPin,
+  Megaphone,
   Phone,
+  Palette,
+  Code2,
   ShieldCheck,
+  Smartphone,
   Sparkles,
-  Target,
   UsersRound,
   Zap,
 } from "lucide-react";
@@ -26,7 +30,7 @@ export const navItems = [
   { label: "Company", path: "/company" },
   { label: "Solutions", path: "/solutions" },
   { label: "Industries", path: "/industries" },
-  { label: "Why MNCS", path: "/why-mncs" },
+  { label: "Why Us", path: "/why-mncs" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -63,7 +67,7 @@ export const values = [
   {
     title: "Sustainable Growth",
     icon: Leaf,
-    text: "MNCS focuses on durable strategies that improve performance without sacrificing long-term resilience.",
+    text: "Multi Networking Consultant Services focuses on durable strategies that improve performance without sacrificing long-term resilience.",
   },
   {
     title: "Collaboration",
@@ -99,6 +103,7 @@ export const solutions = [
       "Vendor registration, compliance readiness, local content advisory, and government approval guidance.",
       "Operational efficiency improvement, market positioning strategy, and project management advisory.",
     ],
+    image: "/images/oil-gas-consulting.png",
   },
   {
     title: "Digital Transformation",
@@ -116,6 +121,7 @@ export const solutions = [
       "ERP, IT solutions, CRM, SaaS, and digital business strategy consulting.",
       "One-stop office setup support with AI-enabled tools and digital business card advisory.",
     ],
+    image: "/images/digital-transformation.png",
   },
   {
     title: "Manpower & HR Consulting",
@@ -133,6 +139,7 @@ export const solutions = [
       "Saudization advisory for workforce localization and long-term employment generation.",
       "HR policy development, training support, workforce development, and resource planning.",
     ],
+    image: "/images/hr-consulting.png",
   },
   {
     title: "Regulatory & Compliance",
@@ -150,6 +157,7 @@ export const solutions = [
       "Legal and documentation assistance for businesses preparing to operate in the Saudi market.",
       "Safety, compliance, and quality consulting to help clients maintain professional operating standards.",
     ],
+    image: "/images/compliance-consulting.png",
   },
   {
     title: "Projects & Planning",
@@ -167,6 +175,7 @@ export const solutions = [
       "Business feasibility studies, market analysis, technical consulting, and engineering advisory.",
       "Monitoring and optimization support to improve execution, performance, and sustainable growth.",
     ],
+    image: "/images/projects-planning.png",
   },
   {
     title: "Renewable Energy",
@@ -184,6 +193,58 @@ export const solutions = [
       "Green energy project advisory with feasibility, planning, investment, and execution support.",
       "Consulting aligned with Saudi Vision 2030 priorities for sustainable energy and economic diversification.",
     ],
+    image: "/images/renewable-energy.png",
+  },
+];
+
+export const digitalServices = [
+  {
+    title: "Graphic Design",
+    icon: Palette,
+    description:
+      "Distinctive visual systems that give ambitious businesses a clear, memorable presence across every customer touchpoint.",
+    benefits: ["Brand identity systems", "Campaign creative", "Presentation design", "UI design direction"],
+    details: [
+      "Visual identities designed to feel cohesive, flexible, and recognisable.",
+      "Digital and print-ready creative that brings strategy to life.",
+    ],
+    image: "/images/graphic-design-studio.png",
+  },
+  {
+    title: "Digital Marketing",
+    icon: Megaphone,
+    description:
+      "Performance-minded campaigns that connect positioning, content, search visibility, and measurable business growth.",
+    benefits: ["SEO strategy", "Campaign planning", "Content systems", "Analytics reporting"],
+    details: [
+      "Audience-focused marketing plans built around commercial goals.",
+      "Clear reporting that turns campaign signals into practical next steps.",
+    ],
+    image: "/images/digital-marketing.png",
+  },
+  {
+    title: "Web Development",
+    icon: Code2,
+    description:
+      "Fast, polished enterprise websites that translate your expertise into an experience clients trust from the first interaction.",
+    benefits: ["Responsive websites", "Conversion journeys", "CMS integration", "Performance optimization"],
+    details: [
+      "Modern front-end experiences that work reliably across every device.",
+      "Purposeful architecture that makes future updates straightforward.",
+    ],
+    image: "/images/web-development.png",
+  },
+  {
+    title: "App Development",
+    icon: Smartphone,
+    description:
+      "Useful mobile products designed around real workflows, with elegant interfaces and a foundation ready to scale.",
+    benefits: ["Product discovery", "Mobile UI systems", "Prototype design", "Launch support"],
+    details: [
+      "Mobile experiences that simplify the work your customers and teams need to do.",
+      "A focused path from product concept through usable release.",
+    ],
+    image: "/images/app-development.png",
   },
 ];
 
@@ -263,9 +324,17 @@ export const expansion = [
 ];
 
 export const contact = {
-  email: "info@mncsglobal.com",
-  phones: ["+966 55599 1530"],
-  address: "King Fahad St, Al Hizam Al Thahabi, Al Khobar 34433, Saudi Arabia",
+  emails: ["info@mncsglobal.com", "operations@mncsglobal.com"],
+  phones: [
+    { label: "India", number: "+91 8838411007" },
+    { label: "Saudi Arabia", number: "+966 577063763" },
+  ],
+  address: [
+    "Bilal Ibn Rabah Street",
+    "Madinat Al Umal",
+    "Dammam 32253",
+    "Kingdom of Saudi Arabia",
+  ],
   hours: "Sunday to Thursday, 9:00 AM - 6:00 PM",
   website: "www.mncsglobal.com",
   socials: [
@@ -278,7 +347,7 @@ export const contact = {
 export const testimonials = [
   {
     quote:
-      "MNCS brings clarity to Saudi market entry with practical advisory, strong local context, and disciplined execution.",
+      "Multi Networking Consultant Services brings clarity to Saudi market entry with practical advisory, strong local context, and disciplined execution.",
     name: "Strategy Director",
     role: "Industrial Services Client",
   },
@@ -294,8 +363,8 @@ export const sitemap = [
   "Home: premium overview, services, statistics, Vision 2030, process, testimonials, CTA",
   "Company: overview, mission, vision, values, philosophy, strengths, objectives",
   "Solutions: six filtered consulting solutions with business benefits",
-  "Industries: six relevant sectors served by MNCS",
-  "Why MNCS: process, strengths, ethics, future expansion, client benefits",
+  "Industries: six relevant sectors served by Multi Networking Consultant Services",
+  "Why Us: process, strengths, ethics, future expansion, client benefits",
   "Contact: form, address, phone, email, map, hours, social links",
 ];
 
@@ -314,12 +383,13 @@ export const objectives = [
 ];
 
 export const quickContacts = [
-  { title: "Call / WhatsApp", icon: Phone, value: "+966 55599 1530" },
-  { title: "Email", icon: CircleDollarSign, value: "info@mncsglobal.com" },
-  { title: "Visit", icon: Landmark, value: "Al Khobar, Saudi Arabia" },
+  { title: "India Call", icon: Phone, value: "+91 8838411007" },
+  { title: "Saudi Call", icon: Phone, value: "+966 577063763" },
+  { title: "Email", icon: Mail, value: "info@mncsglobal.com" },
+  { title: "Website", icon: Globe2, value: "www.mncsglobal.com" },
   {
-    title: "Strategy Desk",
-    icon: Target,
-    value: "Business advisory enquiries",
+    title: "Visit",
+    icon: MapPin,
+    value: "Dammam, Saudi Arabia",
   },
 ];

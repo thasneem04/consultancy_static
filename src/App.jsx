@@ -13,7 +13,7 @@ export default function App() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-night text-white">
+    <div className="site-canvas min-h-screen text-white">
       <Navbar />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>

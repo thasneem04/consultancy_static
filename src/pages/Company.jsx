@@ -12,14 +12,14 @@ export default function Company() {
       <PageHeader
         eyebrow="Company"
         title="A trusted business and management consulting firm for Saudi Arabia’s evolving market."
-        text="MNC Group, formally Multi Networking Consultant Services, helps organizations improve performance, expand market presence, and build sustainable growth strategies across Saudi Arabia and India."
+        text="Multi Networking Consultant Services helps organizations improve performance, expand market presence, and build sustainable growth strategies across Saudi Arabia and India."
       />
 
       <Section eyebrow="Overview" title="Connecting expertise. Empowering global business.">
         <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="glass rounded-2xl p-7 text-base leading-8 text-muted">
             <p>
-              MNCS works closely with companies to develop strategic plans, optimize operations, and unlock business opportunities in one of the world’s fastest-growing economies. Its consulting model combines local market knowledge, professional networks, regulatory awareness, and execution support.
+              Multi Networking Consultant Services works closely with companies to develop strategic plans, optimize operations, and unlock business opportunities in one of the world’s fastest-growing economies. Its consulting model combines local market knowledge, professional networks, regulatory awareness, and execution support.
             </p>
             <p className="mt-5">
               The firm supports businesses with strategic advisory, market development, industry-focused consulting, digital transformation, manpower planning, compliance, project planning, and sustainable energy advisory.
@@ -45,7 +45,7 @@ export default function Company() {
       <Section eyebrow="Corporate Philosophy" title="Professional advisory with accountable execution.">
         <div className="grid gap-5 lg:grid-cols-3">
           <Card icon={Flag} title="Client-first strategy">
-            MNCS begins with a clear understanding of the client’s goals, operating context, constraints, and market opportunities.
+            Multi Networking Consultant Services begins with a clear understanding of the client’s goals, operating context, constraints, and market opportunities.
           </Card>
           <Card icon={Flag} title="Local insight, global standards">
             The company blends Saudi market knowledge with structured consulting practices and professional delivery standards.

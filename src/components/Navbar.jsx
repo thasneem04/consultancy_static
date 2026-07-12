@@ -8,14 +8,14 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-night/75 backdrop-blur-xl">
-      <nav className="section-shell flex h-20 items-center justify-between">
+      <nav className="section-shell flex h-16 items-center justify-between sm:h-20">
         <NavLink to="/" className="focus-ring flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black">
-            <img src="/mnc-logo.jpg" alt="MNC Group logo" className="h-full w-full object-cover" />
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black sm:h-12 sm:w-12">
+            <img src="/mnc-logo.jpg" alt="Multi Networking Consultant Services logo" className="h-full w-full object-cover" />
           </span>
-          <span>
-            <span className="block font-heading text-lg font-extrabold leading-none">MNC Group</span>
-            <span className="mt-1 block text-[11px] font-semibold uppercase tracking-[0.18em] text-muted">Consultant Services</span>
+          <span className="min-w-0">
+            <span className="brand-gradient-text block truncate font-heading text-sm font-extrabold leading-none tracking-[0.12em] sm:text-lg sm:tracking-[0.14em]">MULTI NETWORKING</span>
+            <span className="brand-gradient-text mt-1 block truncate text-[9px] font-semibold uppercase tracking-[0.2em] sm:text-[11px] sm:tracking-[0.22em]">CONSULTANT SERVICES</span>
           </span>
         </NavLink>
 
