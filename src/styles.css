@@ -436,9 +436,28 @@ section.section-shell::before {
 }
 
 .site-logo-frame {
-  width: clamp(3.5rem, 3.25vw, 4.75rem);
-  height: clamp(3.5rem, 3.25vw, 4.75rem);
   flex: 0 0 auto;
+  margin-right: -0.75rem; /* Shims the logo closer to the text to counteract image margins */
+  
+  /* Mobile default: significantly larger logo */
+  width: clamp(3.25rem, 11vw, 3.75rem);
+  height: clamp(3.25rem, 11vw, 3.75rem);
+}
+
+/* Tablet (>= 640px): significantly larger logo */
+@media (min-width: 640px) {
+  .site-logo-frame {
+    width: clamp(4.25rem, 9vw, 5rem);
+    height: clamp(4.25rem, 9vw, 5rem);
+  }
+}
+
+/* Laptop & Desktop (>= 1024px): significantly larger logo */
+@media (min-width: 1024px) {
+  .site-logo-frame {
+    width: clamp(5.25rem, 6.5vw, 5.75rem);
+    height: clamp(5.25rem, 6.5vw, 5.75rem);
+  }
 }
 
 .site-logo-frame--hero {
@@ -446,8 +465,8 @@ section.section-shell::before {
 }
 
 .site-logo-image {
-  width: 130%;
-  height: 130%;
+  width: 155%;
+  height: 155%;
   object-fit: contain;
 }
 

@@ -18,10 +18,10 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-night/75 backdrop-blur-xl">
-      <nav className="section-shell flex h-16 items-center justify-between gap-3 sm:h-20 sm:gap-4">
+      <nav className="section-shell flex h-16 items-center justify-between gap-3 sm:h-20 lg:h-24 sm:gap-4">
         <NavLink
           to="/"
-          className="focus-ring flex items-center gap-3"
+          className="focus-ring flex items-center gap-1"
           onClick={() => setOpen(false)}
         >
           <span className="site-logo-frame flex items-center justify-center overflow-hidden rounded-2xl bg-transparent">

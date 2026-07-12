@@ -14,7 +14,7 @@ export default function PageHeader({ eyebrow, title, text }) {
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-gold">
             {eyebrow}
           </p>
-          <h1 className="font-heading text-4xl font-extrabold leading-tight md:text-6xl">
+          <h1 className="font-heading text-3xl font-bold leading-tight md:text-5xl">
             {title}
           </h1>
           <p className="page-header-text mt-6 max-w-3xl text-lg leading-8 text-muted">
