@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
-import { digitalServices, solutions } from "../data/siteContent.js";
+import { digitalServices, solutions } from "../data/siteContent.jsx";
 
 const storyServices = [...solutions, ...digitalServices];
 
@@ -73,8 +73,10 @@ export default function ServiceStory() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-night via-night/30 to-transparent" />
                 </motion.div>
                 <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.035] p-4 transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-105">
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold">
-                    Multi Networking Consultant Services
+                  <p className="text-xs font-bold uppercase tracking-[0.2em]">
+                    <span className="company-name">
+                      Multi Networking Consultant Services
+                    </span>
                   </p>
                   <p className="mt-2 text-sm text-white/85">
                     Designed for practical growth and a stronger digital
@@ -98,10 +100,12 @@ export default function ServiceStory() {
               </h2>
               <p className="mt-6 text-lg leading-8 text-white/90">
                 From creative branding and digital marketing to enterprise
-                websites and mobile applications, Multi Networking Consultant
-                Services helps businesses innovate, grow, and succeed through
-                modern digital solutions. Let's build something extraordinary
-                together.
+                websites and mobile applications,{" "}
+                <span className="company-name">
+                  Multi Networking Consultant Services
+                </span>{" "}
+                helps businesses innovate, grow, and succeed through modern
+                digital solutions. Let's build something extraordinary together.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link

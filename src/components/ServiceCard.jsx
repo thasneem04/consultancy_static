@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ChevronDown } from 'lucide-react';
 
-export default function ServiceCard({ service }) {
+export default function ServiceCard({ service, plain = false }) {
   const [expanded, setExpanded] = useState(false);
   const Icon = service.icon;
 
   return (
     <motion.article
-      className="group gradient-border flex flex-col rounded-2xl p-6"
+      className={`flex flex-col ${plain ? '' : 'group gradient-border rounded-2xl p-6'}`}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ y: -8 }}

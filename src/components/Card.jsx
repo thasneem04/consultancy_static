@@ -1,9 +1,19 @@
 import { motion } from 'framer-motion';
 
-export default function Card({ icon: Icon, title, children, className = '' }) {
+export default function Card({
+  icon: Icon,
+  title,
+  children,
+  className = '',
+  plain = false,
+}) {
+  const shellClassName = plain
+    ? `transition duration-300 ${className}`.trim()
+    : `gradient-border rounded-2xl p-6 transition duration-300 hover:-translate-y-1 hover:shadow-glow ${className}`.trim();
+
   return (
     <motion.article
-      className={`gradient-border rounded-2xl p-6 transition duration-300 hover:-translate-y-1 hover:shadow-glow ${className}`}
+      className={shellClassName}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

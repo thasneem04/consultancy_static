@@ -25,6 +25,11 @@ import {
 } from "lucide-react";
 import { FaLinkedinIn, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 
+function makeWhatsAppLink(number, message) {
+  const digits = number.replace(/[^\d]/g, "");
+  return `https://wa.me/${digits}?text=${encodeURIComponent(message)}`;
+}
+
 export const navItems = [
   { label: "Home", path: "/" },
   { label: "Company", path: "/company" },
@@ -203,7 +208,12 @@ export const digitalServices = [
     icon: Palette,
     description:
       "Distinctive visual systems that give ambitious businesses a clear, memorable presence across every customer touchpoint.",
-    benefits: ["Brand identity systems", "Campaign creative", "Presentation design", "UI design direction"],
+    benefits: [
+      "Brand identity systems",
+      "Campaign creative",
+      "Presentation design",
+      "UI design direction",
+    ],
     details: [
       "Visual identities designed to feel cohesive, flexible, and recognisable.",
       "Digital and print-ready creative that brings strategy to life.",
@@ -215,7 +225,12 @@ export const digitalServices = [
     icon: Megaphone,
     description:
       "Performance-minded campaigns that connect positioning, content, search visibility, and measurable business growth.",
-    benefits: ["SEO strategy", "Campaign planning", "Content systems", "Analytics reporting"],
+    benefits: [
+      "SEO strategy",
+      "Campaign planning",
+      "Content systems",
+      "Analytics reporting",
+    ],
     details: [
       "Audience-focused marketing plans built around commercial goals.",
       "Clear reporting that turns campaign signals into practical next steps.",
@@ -227,7 +242,12 @@ export const digitalServices = [
     icon: Code2,
     description:
       "Fast, polished enterprise websites that translate your expertise into an experience clients trust from the first interaction.",
-    benefits: ["Responsive websites", "Conversion journeys", "CMS integration", "Performance optimization"],
+    benefits: [
+      "Responsive websites",
+      "Conversion journeys",
+      "CMS integration",
+      "Performance optimization",
+    ],
     details: [
       "Modern front-end experiences that work reliably across every device.",
       "Purposeful architecture that makes future updates straightforward.",
@@ -239,7 +259,12 @@ export const digitalServices = [
     icon: Smartphone,
     description:
       "Useful mobile products designed around real workflows, with elegant interfaces and a foundation ready to scale.",
-    benefits: ["Product discovery", "Mobile UI systems", "Prototype design", "Launch support"],
+    benefits: [
+      "Product discovery",
+      "Mobile UI systems",
+      "Prototype design",
+      "Launch support",
+    ],
     details: [
       "Mobile experiences that simplify the work your customers and teams need to do.",
       "A focused path from product concept through usable release.",
@@ -383,8 +408,24 @@ export const objectives = [
 ];
 
 export const quickContacts = [
-  { title: "India Call", icon: Phone, value: "+91 8838411007" },
-  { title: "Saudi Call", icon: Phone, value: "+966 577063763" },
+  {
+    title: "India Call",
+    icon: FaWhatsapp,
+    value: "+91 8838411007",
+    href: makeWhatsAppLink(
+      "+91 8838411007",
+      "Hello, I would like to connect regarding consulting services."
+    ),
+  },
+  {
+    title: "Saudi Call",
+    icon: Phone,
+    value: "+966 577063763",
+    href: makeWhatsAppLink(
+      "+966 577063763",
+      "Hello, I would like to connect regarding consulting services."
+    ),
+  },
   { title: "Email", icon: Mail, value: "info@mncsglobal.com" },
   { title: "Website", icon: Globe2, value: "www.mncsglobal.com" },
   {

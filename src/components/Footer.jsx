@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { contact, navItems } from "../data/siteContent.js";
+import { contact, navItems } from "../data/siteContent.jsx";
 
 export default function Footer() {
   return (
@@ -11,18 +11,18 @@ export default function Footer() {
       <div className="section-shell grid gap-10 py-12 md:grid-cols-[1.3fr_0.8fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black">
+            <span className="site-logo-frame flex items-center justify-center overflow-hidden rounded-2xl bg-transparent">
               <img
-                src="/mnc-logo.jpg"
+                src="/mnclogo.png"
                 alt="Multi Networking Consultant Services logo"
-                className="h-full w-full object-cover"
+                className="site-logo-image"
               />
             </span>
             <div>
-              <p className="brand-gradient-text font-heading text-lg font-extrabold tracking-[0.14em]">
+              <p className="company-name font-heading text-lg font-extrabold tracking-[0.14em]">
                 MULTI NETWORKING
               </p>
-              <p className="brand-gradient-text text-xs uppercase tracking-[0.22em]">
+              <p className="company-name text-xs uppercase tracking-[0.22em]">
                 CONSULTANT SERVICES
               </p>
             </div>
@@ -77,7 +77,11 @@ export default function Footer() {
       <div className="border-t border-white/10 py-5">
         <div className="section-shell flex flex-col gap-3 text-xs text-muted md:flex-row md:items-center md:justify-between">
           <span>
-            © 2026 Multi Networking Consultant Services. All rights reserved.
+            © 2026{" "}
+            <span className="company-name">
+              Multi Networking Consultant Services
+            </span>
+            . All rights reserved.
           </span>
           <span>{contact.website}</span>
         </div>

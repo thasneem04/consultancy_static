@@ -24,6 +24,7 @@
   --text-primary: #ffffff;
   --text-secondary: #c7d2e0;
   --border-default: rgba(255, 255, 255, 0.08);
+  --brand-gold: #f3d41c;
 }
 
 * {
@@ -142,7 +143,6 @@ a {
   box-shadow:
     0 22px 70px rgba(1, 7, 20, 0.42),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(18px) saturate(125%);
   border-radius: 16px;
 }
 
@@ -238,8 +238,6 @@ a {
   box-shadow:
     0 18px 55px rgba(2, 8, 23, 0.45),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(14px) saturate(120%);
-  -webkit-backdrop-filter: blur(8px);
   transition:
     box-shadow 0.18s ease,
     transform 0.18s ease;
@@ -253,8 +251,6 @@ a {
 /* Navbar backdrop */
 .navbar-bg {
   background: var(--navbar-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-default);
 }
 
@@ -331,6 +327,7 @@ a {
 section.section-shell {
   position: relative;
   border-radius: 2rem;
+  overflow: hidden;
 }
 
 section.section-shell::before {
@@ -346,6 +343,59 @@ section.section-shell::before {
     rgba(72, 70, 148, 0.08)
   );
   box-shadow: 0 28px 80px rgba(0, 5, 22, 0.2);
+}
+
+/* Home content sits directly on the hero/background artwork, without section containers. */
+.home-page .section-shell::before {
+  display: none;
+}
+
+/* Company page premium background */
+.company-shell {
+  background: linear-gradient(
+    180deg,
+    rgba(6, 13, 29, 1) 0%,
+    rgba(11, 23, 48, 0.98) 40%,
+    rgba(22, 39, 70, 0.95) 100%
+  );
+}
+
+/* Ensure section shells inside company page have subtle transparent overlay removed
+   so we avoid multiple glass layers stacking visually. */
+.company-shell .section-shell::before {
+  background: linear-gradient(
+    135deg,
+    rgba(12, 26, 55, 0.06),
+    rgba(72, 70, 148, 0.03)
+  );
+}
+
+/* Flat shell: disable section decorative panels so pages use the global
+   site background (linear gradient) without rounded section containers. */
+.flat-shell {
+  background: transparent;
+}
+.flat-shell .section-shell {
+  border-radius: 0;
+}
+.flat-shell .section-shell::before {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* Give non-home pages more horizontal room so text can use the right side. */
+.flat-shell:not(.home-page) .page-header-copy,
+.flat-shell:not(.home-page) .section-copy {
+  width: 100%;
+  max-width: none;
+}
+
+.flat-shell:not(.home-page) .page-header-text,
+.flat-shell:not(.home-page) .section-text {
+  width: 100%;
+  max-width: none;
 }
 
 .focus-ring {
@@ -381,6 +431,42 @@ section.section-shell::before {
   color: transparent;
 }
 
+.company-name {
+  color: var(--brand-gold);
+}
+
+.site-logo-frame {
+  width: clamp(3.5rem, 3.25vw, 4.75rem);
+  height: clamp(3.5rem, 3.25vw, 4.75rem);
+  flex: 0 0 auto;
+}
+
+.site-logo-frame--hero {
+  width: min(100%, clamp(13rem, 28vw, 21rem));
+}
+
+.site-logo-image {
+  width: 130%;
+  height: 130%;
+  object-fit: contain;
+}
+
+.home-page .company-name {
+  color: #ffffff;
+}
+
+.home-page .glass,
+.home-page .gradient-border {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.home-page .gradient-border:hover {
+  box-shadow: none;
+}
+
 @media (max-width: 1023px) {
   .story-chapter {
     min-height: auto;
@@ -399,6 +485,11 @@ section.section-shell::before {
 @media (max-width: 767px) {
   .section-shell {
     width: min(100% - 24px, 1180px);
+  }
+
+  .flat-shell:not(.home-page) .page-header-copy,
+  .flat-shell:not(.home-page) .section-copy {
+    max-width: 100%;
   }
 
   section.section-shell {
