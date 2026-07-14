@@ -1,9 +1,99 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, Check, Briefcase, BrainCircuit, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { digitalServices, solutions } from "../data/siteContent.jsx";
 
-const storyServices = [...solutions, ...digitalServices];
+const aiService = {
+  title: "AI Agent solution",
+  icon: BrainCircuit,
+  description:
+    "Intelligent AI Automation for Modern Businesses\nTransform your business with intelligent AI agents designed to automate repetitive tasks, streamline operations, and improve customer experiences. We develop custom AI solutions that integrate seamlessly with your existing workflows, enabling businesses to increase productivity, reduce operational costs, and make faster, data-driven decisions. From customer support and sales automation to internal process management and business intelligence, our AI agents help your organization operate smarter and scale efficiently.",
+  benefits: [
+    "Intelligent Business Automation",
+    "AI-Powered Business Operations",
+    "Workflow Optimization",
+    "Customer Experience Solutions",
+    "Sales & Marketing Automation",
+    "Operational Efficiency",
+    "Process Intelligence",
+    "Data-Driven Decision Support",
+    "Enterprise AI Integration",
+    "Digital Workforce Solutions",
+    "AI Consulting & Strategy",
+    "Custom AI Solutions",
+    "Intelligent Process Automation",
+    "Business Productivity Enhancement",
+    "Scalable AI Transformation",
+  ],
+  image: "/images/ai-agent.jpg",
+};
+
+const eventsService = {
+  title: "Events",
+  icon: Calendar,
+  description:
+    "Professional corporate events management and execution. From planning and coordination to seamless execution, we handle every aspect of your business events. Whether it's corporate conferences, product launches, networking sessions, or company retreats, our team ensures a memorable and impactful experience tailored to your organizational goals.",
+  benefits: [
+    "Corporate Conferences",
+    "Product Launches",
+    "Networking Events",
+    "Company Retreats",
+    "Event Planning & Coordination",
+    "Vendor Management",
+    "On-site Execution",
+  ],
+  image: "/images/events-management.jpg",
+};
+
+const businessConsulting = {
+  title: "Business Consulting Services",
+  icon: Briefcase,
+  description:
+    "Whether you're starting a new business or expanding into Saudi Arabia, we provide end-to-end business consulting solutions to help you succeed. From company formation and regulatory guidance to business strategy, operational planning, and process optimization, our experts support you at every stage. We help entrepreneurs, startups, and established businesses build a strong foundation, improve efficiency, and achieve sustainable growth in the Kingdom of Saudi Arabia.",
+  benefits: [
+    "Company Formation in Saudi Arabia",
+    "Business Licensing & Registration",
+    "Business Strategy Development",
+    "Operational Planning & Optimization",
+    "Market Entry & Expansion",
+    "Corporate Advisory Services",
+    "Process Improvement",
+    "Compliance & Regulatory Support",
+    "Business Growth Solutions",
+    "Ongoing Business Consulting",
+  ],
+  image: "/images/projects-planning.png",
+};
+
+const subDigitalServices = [
+  aiService,
+  digitalServices.find((s) => s.title === "Web Development"),
+  digitalServices.find((s) => s.title === "App Development"),
+  digitalServices.find((s) => s.title === "Graphic Design"),
+  digitalServices.find((s) => s.title === "Digital Marketing"),
+];
+
+const mainSolutionsList = [
+  businessConsulting,
+  solutions.find((s) => s.title === "Oil & Gas Consulting"),
+  solutions.find((s) => s.title === "Digital Transformation"),
+  solutions.find((s) => s.title === "Manpower & HR Consulting"),
+  solutions.find((s) => s.title === "Regulatory & Compliance"),
+  solutions.find((s) => s.title === "Projects & Planning"),
+  solutions.find((s) => s.title === "Renewable Energy"),
+  eventsService,
+];
+
+const storyServices = [];
+mainSolutionsList.forEach((service) => {
+  if (!service) return;
+  storyServices.push(service);
+  if (service.title === "Digital Transformation") {
+    subDigitalServices.forEach((sub) => {
+      if (sub) storyServices.push({ ...sub, isSub: true });
+    });
+  }
+});
 
 function visualFor(service) {
   if (service.image) return service.image;
@@ -15,11 +105,13 @@ export default function ServiceStory() {
     <div className="relative">
       <div className="section-shell relative">
         {storyServices.map((service, index) => {
-          const Icon = service.icon;
+          const Icon = service.icon || Briefcase;
           return (
             <motion.article
               key={service.title}
-              className="story-chapter flex items-center py-24"
+              className={`story-chapter flex items-center py-24 ${
+                service.isSub ? "ml-0 md:ml-20 border-l-4 border-skybrand/50 pl-6 md:pl-10" : ""
+              }`}
               initial={{ opacity: 0, y: 20, scale: 0.99 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ amount: 0.15, once: false }}
@@ -31,19 +123,30 @@ export default function ServiceStory() {
                     <span className="flex h-10 w-10 items-center justify-center rounded-2xl border border-gold/30 bg-gold/10 text-gold">
                       <Icon size={18} />
                     </span>
-                    {String(index + 1).padStart(2, "0")} /{" "}
-                    {String(storyServices.length).padStart(2, "0")}
+                    {!service.isSub && (
+                      <>
+                        {String(
+                          storyServices.filter((s) => !s.isSub).indexOf(service) + 1
+                        ).padStart(2, "0")}{" "}
+                        /{" "}
+                        {String(storyServices.filter((s) => !s.isSub).length).padStart(
+                          2,
+                          "0"
+                        )}
+                      </>
+                    )}
+                    {service.isSub && "Digital Service"}
                   </div>
-                  <h2 className="font-heading text-4xl font-extrabold leading-[1.05] md:text-6xl">
+                  <h2 className="font-heading text-4xl font-extrabold leading-[1.05] md:text-6xl whitespace-pre-line">
                     {service.title}
                   </h2>
-                  <p className="mt-6 max-w-xl text-base leading-8 text-muted md:text-lg">
+                  <p className="mt-6 max-w-xl text-base leading-8 text-muted md:text-lg whitespace-pre-line">
                     {service.description}
                   </p>
                   <ul className="mt-7 grid gap-3 sm:grid-cols-2">
                     {service.benefits.map((feature) => (
                       <li
-                        key={feature}
+                         key={feature}
                         className="flex items-center gap-3 text-sm font-medium text-white/90"
                       >
                         <Check className="shrink-0 text-skybrand" size={17} />
@@ -79,8 +182,7 @@ export default function ServiceStory() {
                     </span>
                   </p>
                   <p className="mt-2 text-sm text-white/85">
-                    Designed for practical growth and a stronger digital
-                    presence.
+                    Designed for practical growth and a stronger digital presence.
                   </p>
                 </div>
               </div>
