@@ -129,7 +129,7 @@ export const solutions = [
     image: "/images/digital-transformation.png",
   },
   {
-    title: "Manpower & HR Consulting",
+    title: "HR management and Man power supply",
     icon: UsersRound,
     description:
       "Workforce advisory covering recruitment, manpower planning, Saudization, HR policy, and workforce development.",
@@ -352,13 +352,13 @@ export const contact = {
   emails: ["info@mncsglobal.com", "operations@mncsglobal.com"],
   phones: [
     { label: "India", number: "+91 8838411007" },
+    { label: "India", number: "+91 7397273994" },
     { label: "Saudi Arabia", number: "+966 577063763" },
   ],
   address: [
-    "Bilal Ibn Rabah Street",
-    "Madinat Al Umal",
-    "Dammam 32253",
-    "Kingdom of Saudi Arabia",
+    "India",
+    "Saudi Arabia",
+    "Canada"
   ],
   hours: "Sunday to Thursday, 9:00 AM - 6:00 PM",
   website: "www.mncsglobal.com",

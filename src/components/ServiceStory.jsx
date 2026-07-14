@@ -62,25 +62,25 @@ const businessConsulting = {
     "Business Growth Solutions",
     "Ongoing Business Consulting",
   ],
-  image: "/images/projects-planning.png",
+  image: "/images/business-consulting.jpg",
 };
 
 const subDigitalServices = [
   aiService,
-  digitalServices.find((s) => s.title === "Web Development"),
-  digitalServices.find((s) => s.title === "App Development"),
-  digitalServices.find((s) => s.title === "Graphic Design"),
-  digitalServices.find((s) => s.title === "Digital Marketing"),
+  { ...digitalServices.find((s) => s.title === "Web Development"), image: "/images/web-development.jpg" },
+  { ...digitalServices.find((s) => s.title === "App Development"), image: "/images/app-development.jpg" },
+  { ...digitalServices.find((s) => s.title === "Graphic Design"), image: "/images/graphic-design.jpg" },
+  { ...digitalServices.find((s) => s.title === "Digital Marketing"), image: "/images/digital-marketing-new.jpg" },
 ];
 
 const mainSolutionsList = [
   businessConsulting,
-  solutions.find((s) => s.title === "Oil & Gas Consulting"),
-  solutions.find((s) => s.title === "Digital Transformation"),
-  solutions.find((s) => s.title === "Manpower & HR Consulting"),
-  solutions.find((s) => s.title === "Regulatory & Compliance"),
-  solutions.find((s) => s.title === "Projects & Planning"),
-  solutions.find((s) => s.title === "Renewable Energy"),
+  { ...solutions.find((s) => s.title === "Oil & Gas Consulting"), image: "/images/oil-gas.jpg" },
+  { ...solutions.find((s) => s.title === "Digital Transformation"), image: "/images/digital-transformation-new.jpg" },
+  { ...solutions.find((s) => s.title === "HR management and Man power supply"), image: "/images/hr-consulting.jpg" },
+  { ...solutions.find((s) => s.title === "Regulatory & Compliance"), image: "/images/compliance-consulting.jpg" },
+  { ...solutions.find((s) => s.title === "Projects & Planning"), image: "/images/projects-planning.jpg" },
+  { ...solutions.find((s) => s.title === "Renewable Energy"), image: "/images/renewable-energy.jpg" },
   eventsService,
 ];
 
@@ -170,10 +170,10 @@ export default function ServiceStory() {
                   <img
                     src={visualFor(service)}
                     alt={`${service.title} service`}
-                    className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity duration-500 ease-out"
+                    className="absolute inset-0 h-full w-full object-cover opacity-90 brightness-125 transition-opacity duration-500 ease-out"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-night via-night/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-night/70 via-night/20 to-transparent pointer-events-none" />
                 </motion.div>
                 <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.035] p-4 transition-transform duration-300 ease-out hover:-translate-y-1 hover:scale-105">
                   <p className="text-xs font-bold uppercase tracking-[0.2em]">

@@ -139,7 +139,7 @@ export default function Contact() {
                     <div className="mt-4 grid gap-3 text-sm font-semibold">
                       {contact.phones.map((phone) => (
                         <a
-                          key={phone.label}
+                          key={phone.number}
                           href={telHref(phone.number)}
                           className="focus-ring rounded-2xl border border-white/10 bg-black/20 px-4 py-3 transition hover:border-magenta/60 hover:bg-magenta/10"
                         >
@@ -234,14 +234,7 @@ export default function Contact() {
             </form>
 
             <div className="grid gap-5">
-              <div className="overflow-hidden rounded-[2rem] border border-white/10">
-                <iframe
-                  title="Multi Networking Consultant Services map"
-                  className="h-72 w-full sm:h-96 lg:h-[28rem]"
-                  loading="lazy"
-                  src="https://www.google.com/maps?q=Bilal%20Ibn%20Rabah%20Street%2C%20Madinat%20Al%20Umal%2C%20Dammam%2032253%2C%20Saudi%20Arabia&output=embed"
-                />
-              </div>
+
 
               <div className="rounded-[2rem] p-6 bg-white/[0.02] border border-white/6">
                 <h3 className="font-heading text-2xl font-bold">
